@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Store101 — AI for Small Business</title>
-<meta name="description" content="Store101 builds custom AI tools and automation for small businesses — AI assistants, data analysis, and workflow automation that run on your own data. Book a free consultation." />
+<title>Axon Labs — AI Tools & Automation for Small Businesses</title>
+<meta name="description" content="Axon Labs builds custom AI tools and automation for small and mid-size businesses — AI assistants, data analysis, and workflow automation that run on your own data. Book a free consultation." />
 <meta name="keywords" content="AI solutions, custom AI tools, AI automation, small business AI, AI development, business automation, AI assistant, AI data analysis" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Store101 — AI for Small Business" />
+<meta property="og:title" content="Axon Labs — AI Tools & Automation for Small Businesses" />
 <meta property="og:description" content="Custom AI tools and automation for small and mid-size businesses. AI assistants, data analysis, and automation that run on your own data. Book a free consultation." />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,20 +23,25 @@
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:#0b0b10;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
   ::selection{background:var(--violet);color:#fff}
   .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
 
-  /* ===== scroll-to-enter storefront video hero ===== */
-  #hero-scene{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;background:#0b0b10}
-  #hero-video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:100%;height:100%;object-fit:cover;object-position:center;display:block;background:#0b0b10}
-  /* scrim keeps foreground text readable over the light paper footage */
-  #hero-scrim{position:absolute;inset:0;
+  /* fallback gradient (shown if WebGL unavailable) */
+  #bg-fallback{position:fixed;inset:0;z-index:0;display:none;pointer-events:none;
     background:
-      radial-gradient(120% 100% at 50% 40%, rgba(6,7,14,.30) 40%, rgba(6,7,14,.78) 100%),
-      linear-gradient(180deg, rgba(6,7,14,.55) 0%, rgba(6,7,14,.15) 22%, rgba(6,7,14,.15) 55%, rgba(6,7,14,.82) 100%)}
+      radial-gradient(60% 50% at 50% 38%, rgba(59,99,240,.34), transparent 70%),
+      radial-gradient(45% 40% at 62% 55%, rgba(30,57,200,.30), transparent 72%),
+      radial-gradient(40% 40% at 38% 60%, rgba(127,160,255,.16), transparent 70%),
+      #08060E;}
+  body.no-webgl #bg-fallback{display:block}
+  /* webgl canvas */
+  #blob{position:fixed;inset:0;z-index:0;display:block;pointer-events:none}
+  body.no-webgl #blob{display:none}
+  /* readability veil over the 3D so text stays legible */
+  .veil{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg, rgba(8,6,14,.15) 0%, rgba(8,6,14,.0) 22%, rgba(8,6,14,.0) 60%, rgba(8,6,14,.55) 100%);}
 
   .content{position:relative;z-index:2}
 
@@ -57,33 +62,9 @@
   .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:64px;padding-bottom:40px}
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--violet-lt);margin:0 0 22px}
   /* --- THE NAME lives here — swap the text of h1.firm-name to rename --- */
-  .firm-name{position:relative;display:inline-block;font-family:var(--disp);font-weight:700;font-size:clamp(56px,13vw,150px);line-height:.92;letter-spacing:-.03em;margin:0 0 8px;
-    background:linear-gradient(180deg,#ffffff 0%,#DCE7FF 58%,#B6CBFF 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
-    filter:drop-shadow(0 2px 16px rgba(4,7,24,.7)) drop-shadow(0 0 1px rgba(4,7,24,.6));}
-  .firm-name::before,.firm-name::after{content:attr(data-text);position:absolute;left:0;top:0;width:100%;
-    -webkit-text-fill-color:initial;background:none;pointer-events:none;mix-blend-mode:screen;opacity:.9;}
-  .firm-name::before{color:#00e6ff;animation:glx1 2.6s infinite steps(1) alternate-reverse;}
-  .firm-name::after{color:#ff2f6e;animation:glx2 3.3s infinite steps(1) alternate-reverse;}
-  @keyframes glx1{
-    0%{clip-path:inset(18% 0 62% 0);transform:translate(-2px,-1px);}
-    15%{clip-path:inset(70% 0 12% 0);transform:translate(2px,1px);}
-    30%{clip-path:inset(0 0 0 0);transform:translate(0,0);}
-    45%{clip-path:inset(42% 0 38% 0);transform:translate(-2px,0);}
-    62%{clip-path:inset(0 0 0 0);transform:translate(0,0);}
-    78%{clip-path:inset(80% 0 6% 0);transform:translate(2px,-1px);}
-    100%{clip-path:inset(30% 0 48% 0);transform:translate(-1px,1px);}
-  }
-  @keyframes glx2{
-    0%{clip-path:inset(25% 0 55% 0);transform:translate(2px,1px);}
-    15%{clip-path:inset(10% 0 78% 0);transform:translate(-2px,-1px);}
-    30%{clip-path:inset(0 0 0 0);transform:translate(0,0);}
-    45%{clip-path:inset(60% 0 20% 0);transform:translate(2px,0);}
-    62%{clip-path:inset(0 0 0 0);transform:translate(0,0);}
-    78%{clip-path:inset(35% 0 45% 0);transform:translate(-2px,1px);}
-    100%{clip-path:inset(72% 0 10% 0);transform:translate(1px,-1px);}
-  }
-  @media (prefers-reduced-motion: reduce){ .firm-name::before,.firm-name::after{animation:none;opacity:0;} }
-  .hero-sub{font-size:clamp(16px,2.2vw,20px);color:#B8C2DC;max-width:560px;margin:26px 0 34px;line-height:1.55;text-shadow:0 1px 14px rgba(4,7,24,.6)}
+  .firm-name{font-family:var(--disp);font-weight:700;font-size:clamp(56px,13vw,150px);line-height:.92;letter-spacing:-.03em;margin:0 0 8px;
+    background:linear-gradient(180deg,#fff 0%,#BFD0FF 55%,#6E8CE6 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero-sub{font-size:clamp(16px,2.2vw,20px);color:var(--slate);max-width:560px;margin:26px 0 34px;line-height:1.55}
   .hero-sub b{color:var(--ink);font-weight:600}
   .hero-btns{display:flex;gap:13px;flex-wrap:wrap}
   .btn{font-family:var(--disp);font-weight:600;font-size:15px;padding:13px 22px;border-radius:11px;cursor:pointer;transition:transform .16s ease,filter .16s ease,border-color .16s ease;border:1px solid transparent;display:inline-block}
@@ -184,18 +165,15 @@
 </head>
 <body>
 
-<div id="hero-scene" aria-hidden="true">
-  <video id="hero-video" muted playsinline autoplay preload="auto" tabindex="-1">
-    <source src="assets/storefront.mp4" type="video/mp4" />
-  </video>
-  <div id="hero-scrim"></div>
-</div>
+<div id="bg-fallback"></div>
+<canvas id="blob"></canvas>
+<div class="veil"></div>
 
 <div class="content">
 <nav>
   <div class="wrap nav-in">
-    <!-- ===== FIRM NAME (nav) ===== -->
-    <span class="mark"><span class="dot"></span>Store101</span>
+    <!-- ===== FIRM NAME (nav) — change "Axon Labs" here too ===== -->
+    <span class="mark"><span class="dot"></span>Axon Labs</span>
     <span class="nav-sp"></span>
     <a class="nav-link" href="#products">Products</a>
     <a class="nav-link" href="#services">Services</a>
@@ -208,9 +186,9 @@
   <div class="wrap">
     <p class="eyebrow rv">AI Solutions for Small Business</p>
     <!-- ============================================================= -->
-    <!--  FIRM NAME (hero)  -->
+    <!--  THE NAME — replace "Axon Labs" below with your firm name      -->
     <!-- ============================================================= -->
-    <h1 class="firm-name rv rv-d1" data-text="Store101">Store101</h1>
+    <h1 class="firm-name rv rv-d1">Axon<br>Labs</h1>
     <p class="hero-sub rv rv-d2">We build <b>custom AI tools and automation</b> for small and mid-size businesses — AI assistants, data analysis, and workflow automation that run on your own data and save you time and money.</p>
     <div class="hero-btns rv rv-d3">
       <a class="btn btn-a" href="#contact">Book a Free Consultation</a>
@@ -322,7 +300,7 @@
 
 <footer>
   <div class="wrap foot-in">
-    <span>STORE101 — AI FOR SMALL BUSINESS</span>
+    <span>AXON LABS — AI TOOLS &amp; AUTOMATION FOR SMALL BUSINESS</span>
     <span>KINGSTON, ON · <a href="#contact" style="color:var(--violet-lt)">GET IN TOUCH</a></span>
   </div>
 </footer>
@@ -330,35 +308,318 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-/* Storefront hero: smooth playback. Plays the walk-in once when the page loads,
-   then holds on the final "inside" frame. Replays gently when you return to top. */
+/* ============================================================
+   Liquid-chrome blob that morphs toward a subtle heart on scroll.
+   Robust: any failure falls back to the CSS gradient background.
+   ============================================================ */
 (function(){
-  var v=document.getElementById('hero-video');
-  if(!v) return;
-  v.muted=true; v.playsInline=true;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canvas = document.getElementById('blob');
 
-  function play(){ var p=v.play(); if(p&&p.catch) p.catch(function(){ /* autoplay blocked: show first frame */ }); }
+  function useFallback(){ document.body.classList.add('no-webgl'); }
 
-  if(reduce){ // no motion: just show the final inside frame
-    v.addEventListener('loadedmetadata', function(){ try{ v.currentTime=Math.max(0,v.duration-0.05); }catch(e){} });
-    return;
+  if (reduce || !window.THREE || !canvas) { useFallback(); }
+  else {
+    try { initBlob(); } catch (e) { console.error('blob init failed', e); useFallback(); }
   }
 
-  // play through once on load, then hold on the last frame
-  var held=false;
-  v.addEventListener('ended', function(){ held=true; try{ v.pause(); }catch(e){} });
-  v.addEventListener('canplay', function(){ if(!held) play(); }, {once:true});
+  function makeMatcap(){
+    // soft MATTE cobalt-blue: rich royal-blue core fading to gentle lighter blue.
+    var s = 512, c = document.createElement('canvas'); c.width = c.height = s;
+    var x = c.getContext('2d');
+    x.fillStyle = '#0A1030'; x.fillRect(0,0,s,s);
+    // diffuse body: soft light-blue on the lit side -> deep cobalt -> dark navy edge
+    var g = x.createRadialGradient(s*0.42, s*0.34, s*0.03, s*0.52, s*0.55, s*0.68);
+    g.addColorStop(0.00, '#CFE0FF');   // soft light-blue (gentle, not white)
+    g.addColorStop(0.22, '#7FA3FF');
+    g.addColorStop(0.46, '#3A63F0');   // royal blue
+    g.addColorStop(0.68, '#1E39C8');   // cobalt
+    g.addColorStop(0.86, '#14268F');
+    g.addColorStop(1.00, '#0A1030');   // deep navy edge
+    x.fillStyle = g;
+    x.beginPath(); x.arc(s/2, s/2, s/2, 0, Math.PI*2); x.fill();
+    // very soft broad highlight (matte sheen, NOT a sharp specular)
+    var h = x.createRadialGradient(s*0.40, s*0.32, 0, s*0.40, s*0.32, s*0.30);
+    h.addColorStop(0, 'rgba(220,232,255,0.45)');
+    h.addColorStop(1, 'rgba(220,232,255,0)');
+    x.globalCompositeOperation = 'lighter';
+    x.fillStyle = h; x.beginPath(); x.arc(s*0.40, s*0.32, s*0.30, 0, Math.PI*2); x.fill();
+    x.globalCompositeOperation = 'source-over';
+    // soft blue rim glow so it reads on a dark background
+    var r = x.createRadialGradient(s/2, s/2, s*0.40, s/2, s/2, s*0.5);
+    r.addColorStop(0, 'rgba(90,130,255,0)');
+    r.addColorStop(0.85, 'rgba(90,130,255,0)');
+    r.addColorStop(1, 'rgba(120,160,255,0.4)');
+    x.fillStyle = r; x.beginPath(); x.arc(s/2, s/2, s/2, 0, Math.PI*2); x.fill();
+    // dithering to kill banding (important for a soft gradient look)
+    try {
+      var img = x.getImageData(0,0,s,s), d = img.data;
+      for (var i=0;i<d.length;i+=4){ var nz=(Math.random()-0.5)*6; d[i]+=nz; d[i+1]+=nz; d[i+2]+=nz; }
+      x.putImageData(img,0,0);
+    } catch(e){}
+    var t = new THREE.CanvasTexture(c);
+    t.minFilter = THREE.LinearFilter; t.magFilter = THREE.LinearFilter;
+    if ('anisotropy' in t) t.anisotropy = 4;
+    t.needsUpdate = true; return t;
+  }
 
-  // if the user scrolls back to the very top, replay the walk-in
-  var atTop=true;
-  window.addEventListener('scroll', function(){
-    var y=window.pageYOffset||document.documentElement.scrollTop;
-    if(y<40 && !atTop){ atTop=true; if(held){ held=false; try{v.currentTime=0;}catch(e){} play(); } }
-    else if(y>=40){ atTop=false; }
-  }, {passive:true});
+  function initBlob(){
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+    var mobileGPU = window.innerWidth < 760;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobileGPU ? 1.5 : 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
-  play();
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 100);
+    camera.position.z = 3.4;
+
+    var isMobileDevice = window.innerWidth < 760;
+    var geo = new THREE.IcosahedronGeometry(1, isMobileDevice ? 30 : 72); // fewer verts on mobile
+
+    var uniforms = {
+      uTime:    { value: 0 },
+      uScroll:  { value: 0 },
+      uAmp:     { value: 0.22 },
+      uPointerBoost: { value: 0 }
+    };
+
+    var vertexShader = [
+      'uniform float uTime;',
+      'uniform float uScroll;',
+      'uniform float uAmp;',
+      'uniform float uPointerBoost;',
+      'varying vec3 vViewNormal;',
+      'varying vec3 vViewPos;',
+      'varying vec3 vObjPos;',
+      // --- Ashima simplex noise 3D ---
+      'vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x,289.0);}',
+      'vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}',
+      'float snoise(vec3 v){',
+      '  const vec2 C=vec2(1.0/6.0,1.0/3.0); const vec4 D=vec4(0.0,0.5,1.0,2.0);',
+      '  vec3 i=floor(v+dot(v,C.yyy)); vec3 x0=v-i+dot(i,C.xxx);',
+      '  vec3 g=step(x0.yzx,x0.xyz); vec3 l=1.0-g; vec3 i1=min(g.xyz,l.zxy); vec3 i2=max(g.xyz,l.zxy);',
+      '  vec3 x1=x0-i1+1.0*C.xxx; vec3 x2=x0-i2+2.0*C.xxx; vec3 x3=x0-1.0+3.0*C.xxx;',
+      '  i=mod(i,289.0);',
+      '  vec4 p=permute(permute(permute(i.z+vec4(0.0,i1.z,i2.z,1.0))+i.y+vec4(0.0,i1.y,i2.y,1.0))+i.x+vec4(0.0,i1.x,i2.x,1.0));',
+      '  float n_=1.0/7.0; vec3 ns=n_*D.wyz-D.xzx;',
+      '  vec4 j=p-49.0*floor(p*ns.z*ns.z);',
+      '  vec4 x_=floor(j*ns.z); vec4 y_=floor(j-7.0*x_);',
+      '  vec4 x=x_*ns.x+ns.yyyy; vec4 y=y_*ns.x+ns.yyyy; vec4 h=1.0-abs(x)-abs(y);',
+      '  vec4 b0=vec4(x.xy,y.xy); vec4 b1=vec4(x.zw,y.zw);',
+      '  vec4 s0=floor(b0)*2.0+1.0; vec4 s1=floor(b1)*2.0+1.0; vec4 sh=-step(h,vec4(0.0));',
+      '  vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy; vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;',
+      '  vec3 p0=vec3(a0.xy,h.x); vec3 p1=vec3(a0.zw,h.y); vec3 p2=vec3(a1.xy,h.z); vec3 p3=vec3(a1.zw,h.w);',
+      '  vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));',
+      '  p0*=norm.x; p1*=norm.y; p2*=norm.z; p3*=norm.w;',
+      '  vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0); m=m*m;',
+      '  return 42.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));',
+      '}',
+      // subtle heart cue: top notch + bottom point, scaled by scroll
+      'float heartField(vec3 p){',
+      '  float topNotch = -smoothstep(0.15,0.9,p.y) * (1.0 - smoothstep(0.0,0.42,abs(p.x))) * 0.55;',
+      '  float bottomPoint = -smoothstep(0.15,0.95,-p.y) * 0.28;',
+      '  return topNotch + bottomPoint;',
+      '}',
+      // total radial displacement at a point on the unit sphere
+      // displacement: big soft lobes that bloom outward and relax (breathing), like the ref
+      'float disp(vec3 p){',
+      '  float t = uTime;',
+      '  float pulse = pow(0.5 + 0.5*sin(t*0.28), 1.2);',
+      '  float big  = snoise(p*1.15 + vec3(0.0, t*0.09, 0.0));',
+      '  float mid  = snoise(p*1.75 - vec3(t*0.06, 0.0, t*0.05)) * 0.32;',
+      '  float fine = snoise(p*3.2  + t*0.10) * 0.04;',
+      '  float amp  = uAmp * (0.72 + 0.5*pulse) * (1.0 + uPointerBoost*0.4);',
+      '  float base = (big + mid + fine) * amp;',
+      '  base += heartField(p) * uScroll * 0.5;',
+      '  return base;',
+      '}',
+      'void main(){',
+      '  vec3 p = normalize(position);',
+      '  vObjPos = p;',
+      '  float d = disp(p);',
+      '  vec3 displaced = position * (1.0 + d);',
+      // recompute normal via finite differences (perturb along tangents)
+      '  float e = 0.035;',
+      '  vec3 refA = abs(p.y) < 0.98 ? vec3(0.0,1.0,0.0) : vec3(1.0,0.0,0.0);',  // avoid pole degeneracy
+      '  vec3 tangent = normalize(cross(p, refA));',
+      '  vec3 bitangent = normalize(cross(p, tangent));',
+      '  vec3 pa = normalize(p + tangent*e);   vec3 na = pa*(1.0+disp(pa));',
+      '  vec3 pb = normalize(p + bitangent*e); vec3 nb = pb*(1.0+disp(pb));',
+      '  vec3 newNormal = normalize(cross(na - displaced, nb - displaced));',
+      '  if(dot(newNormal,p) < 0.0) newNormal = -newNormal;',
+      '  vViewNormal = normalize(normalMatrix * newNormal);',
+      '  vec4 mv = modelViewMatrix * vec4(displaced,1.0);',
+      '  vViewPos = mv.xyz;',
+      '  gl_Position = projectionMatrix * mv;',
+      '}'
+    ].join('\n');
+
+    var fragmentShader = [
+      'varying vec3 vViewNormal;',
+      'varying vec3 vViewPos;',
+      'varying vec3 vObjPos;',
+      // multi-hue gradient painted across the surface (blue -> indigo -> violet -> cyan -> periwinkle)
+      'vec3 palette(float t){',
+      '  vec3 c0 = vec3(0.31, 0.80, 0.90);',   // cyan (bottom)
+      '  vec3 c1 = vec3(0.28, 0.47, 0.95);',   // blue
+      '  vec3 c2 = vec3(0.44, 0.37, 0.92);',   // indigo
+      '  vec3 c3 = vec3(0.66, 0.52, 0.95);',   // soft violet
+      '  vec3 c4 = vec3(0.78, 0.82, 1.00);',   // periwinkle (top)
+      '  vec3 col = mix(c0, c1, smoothstep(0.0, 0.30, t));',
+      '  col = mix(col, c2, smoothstep(0.30, 0.55, t));',
+      '  col = mix(col, c3, smoothstep(0.55, 0.78, t));',
+      '  col = mix(col, c4, smoothstep(0.78, 1.0, t));',
+      '  return col;',
+      '}',
+      'float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898,78.233)))*43758.5453); }',
+      'void main(){',
+      '  vec3 n = normalize(vViewNormal);',
+      '  vec3 viewDir = normalize(-vViewPos);',
+      // colour mapped to surface position (swirls as the blob tumbles)
+      '  float t = clamp(vObjPos.y*0.5 + 0.5 + vObjPos.x*0.14 - vObjPos.z*0.08, 0.0, 1.0);',
+      '  vec3 base = palette(t);',
+      // soft, velvety matte lighting (half-Lambert, gentle contrast)
+      '  vec3 L = normalize(vec3(-0.35, 0.55, 0.75));',
+      '  float d = dot(n, L) * 0.5 + 0.5;',
+      '  d = pow(clamp(d, 0.0, 1.0), 1.1);',
+      '  vec3 col = base * (0.52 + 0.62*d);',           // keep hue, modulate brightness softly
+      // soft light-blue rim so it reads round and glows on the dark page
+      '  float fres = pow(1.0 - clamp(dot(n, viewDir), 0.0, 1.0), 2.0);',
+      '  col += vec3(0.55, 0.65, 1.0) * fres * 0.28;',
+      // gentle top sheen (a broad soft highlight, not a hard specular)
+      '  float sheen = pow(clamp(d, 0.0, 1.0), 3.0) * 0.18;',
+      '  col += vec3(1.0) * sheen;',
+      // fine sparkle / film grain for that frosted, premium surface
+      '  float g = hash(gl_FragCoord.xy);',
+      '  col += (g - 0.5) * 0.035;',
+      '  gl_FragColor = vec4(col, 1.0);',
+      '}'
+    ].join('\n');
+
+    var material = new THREE.ShaderMaterial({ uniforms: uniforms, vertexShader: vertexShader, fragmentShader: fragmentShader });
+    var mesh = new THREE.Mesh(geo, material);
+    scene.add(mesh);
+
+    // ---- responsive sizing + per-section choreography ----
+    // Each section gets a designated side; the blob glides between them as you scroll.
+    var sideBySection = [
+      { sel: '.hero',      side:  1, y:  0.05 },  // right
+      { sel: '#products',  side: -1, y: -0.05 },  // left
+      { sel: '#services',  side:  1, y:  0.05 },  // right
+      { sel: '#contact',   side: -1, y: -0.05 }   // left
+    ];
+    var anchors = [];   // {center, x, y} in document space
+    var hRange = 1.0, baseScale = 1.15;
+
+    function computeAnchors(){
+      var w = window.innerWidth;
+      hRange = w < 820 ? 0.42 : 1.15;          // how far left/right it travels
+      baseScale = w < 720 ? 0.62 : (w < 1100 ? 0.72 : 0.80);   // smaller, calmer presence
+      anchors = sideBySection.map(function(s){
+        var el = document.querySelector(s.sel);
+        if(!el) return null;
+        var r = el.getBoundingClientRect();
+        var center = r.top + (window.pageYOffset||0) + r.height/2;
+        return { center: center, x: s.side * hRange, y: s.y };
+      }).filter(Boolean);
+    }
+
+    function layout(){
+      var w = window.innerWidth, h = window.innerHeight;
+      renderer.setSize(w, h);
+      camera.aspect = w/h; camera.updateProjectionMatrix();
+      computeAnchors();
+      mesh.scale.set(baseScale, baseScale, baseScale);
+    }
+
+    // smooth interpolation helper
+    function smoothstep(t){ t = Math.max(0, Math.min(1, t)); return t*t*(3-2*t); }
+
+    // returns the target {x,y} for the current scroll position
+    function targetPos(){
+      if(!anchors.length) return { x: hRange, y: 0 };
+      var view = (window.pageYOffset||0) + window.innerHeight/2;
+      if(view <= anchors[0].center) return { x: anchors[0].x, y: anchors[0].y };
+      if(view >= anchors[anchors.length-1].center){ var a=anchors[anchors.length-1]; return { x:a.x, y:a.y }; }
+      for(var i=0;i<anchors.length-1;i++){
+        var a = anchors[i], b = anchors[i+1];
+        if(view >= a.center && view <= b.center){
+          var t = smoothstep((view - a.center)/(b.center - a.center));
+          return { x: a.x + (b.x-a.x)*t, y: a.y + (b.y-a.y)*t };
+        }
+      }
+      return { x: anchors[0].x, y: anchors[0].y };
+    }
+
+    computeAnchors();
+    layout();
+    window.addEventListener('resize', layout);
+
+    // scroll → morph amount (heart lean grows as you go down)
+    var targetScroll = 0, curScroll = 0;
+    function onScroll(){
+      var max = (document.body.scrollHeight - window.innerHeight) || 1;
+      targetScroll = Math.min(1, (window.pageYOffset || 0) / max);
+    }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+    // recompute anchors after layout settles (fonts/images can shift heights)
+    window.addEventListener('load', computeAnchors);
+    setTimeout(computeAnchors, 600);
+
+    var clock = new THREE.Clock();
+    var running = true;
+    // choreography (eased) + pointer interaction state
+    var choreoX = hRange, choreoY = 0.05;
+    var targetPx = 0, targetPy = 0, curPx = 0, curPy = 0;
+    var lastPx = 0, lastPy = 0, pointerBoost = 0;
+
+    function onPointer(e){
+      var x = (e.clientX / window.innerWidth) * 2 - 1;
+      var y = -((e.clientY / window.innerHeight) * 2 - 1);
+      var dx = x - lastPx, dy = y - lastPy; lastPx = x; lastPy = y;
+      targetPx = x; targetPy = y;
+      // moving the pointer makes it bloom more
+      pointerBoost = Math.min(0.6, pointerBoost + Math.sqrt(dx*dx + dy*dy) * 0.9);
+    }
+    window.addEventListener('pointermove', onPointer, { passive:true });
+    // a tap / click gives it a gentle pulse
+    window.addEventListener('pointerdown', function(e){ onPointer(e); pointerBoost = 0.6; }, { passive:true });
+
+    mesh.position.x = hRange; mesh.position.y = 0.05;
+    document.addEventListener('visibilitychange', function(){ running = !document.hidden; if(running) animate(); });
+
+    function animate(){
+      if(!running) return;
+      requestAnimationFrame(animate);
+      var t = clock.getElapsedTime();
+      curScroll += (targetScroll - curScroll) * 0.06;
+
+      // pointer easing + gentle return to neutral when idle
+      targetPx *= 0.96; targetPy *= 0.96;
+      curPx += (targetPx - curPx) * 0.08;
+      curPy += (targetPy - curPy) * 0.08;
+      pointerBoost *= 0.93;   // decays back to calm
+
+      // section choreography (eased) + pointer parallax on top
+      var tp = targetPos();
+      choreoX += (tp.x - choreoX) * 0.05;
+      choreoY += (tp.y - choreoY) * 0.05;
+      mesh.position.x = choreoX + curPx * 0.16;
+      mesh.position.y = choreoY + curPy * 0.13;
+
+      uniforms.uTime.value = t;
+      uniforms.uScroll.value = curScroll;
+      uniforms.uPointerBoost.value = pointerBoost;
+
+      // lean toward the pointer + the existing idle tumble
+      mesh.rotation.y = t*0.08 + curScroll*1.0 + curPx*0.32;
+      mesh.rotation.x = curScroll*0.3 + Math.sin(t*0.12)*0.09 - curPy*0.28;
+      mesh.rotation.z = Math.cos(t*0.09)*0.06;
+      renderer.render(scene, camera);
+    }
+    animate();
+  }
 })();
 </script>
 
