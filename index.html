@@ -4,12 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Store101 — AI for Small Business</title>
-<meta name="description" content="Store101 builds custom AI tools and automation for small businesses — AI assistants, data analysis, and workflow automation that run on your own data. Book a free consultation." />
+<meta name="description" content="Store101 builds custom AI tools and automation for small businesses — AI assistants, data analysis, and workflow automation that run on your own data. Find the AI tool that fixes what is slowing you down." />
 <meta name="keywords" content="AI solutions, custom AI tools, AI automation, small business AI, AI development, business automation, AI assistant, AI data analysis" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Store101 — AI for Small Business" />
-<meta property="og:description" content="Custom AI tools and automation for small and mid-size businesses. AI assistants, data analysis, and automation that run on your own data. Book a free consultation." />
+<meta property="og:description" content="Custom AI tools and automation for small and mid-size businesses. AI assistants, data analysis, and automation that run on your own data. Find the AI tool that fixes what is slowing you down." />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,7 +200,7 @@
     <a class="nav-link" href="#products">Products</a>
     <a class="nav-link" href="#services">Services</a>
     <a class="nav-link" href="#contact">Contact</a>
-    <a class="nav-cta" href="#contact">Book a Free Consultation</a>
+    <a class="nav-cta" href="https://store101-start.vercel.app/" target="_blank" rel="noopener">Find your AI tool</a>
   </div>
 </nav>
 
@@ -213,7 +213,7 @@
     <h1 class="firm-name rv rv-d1" data-text="Store101">Store101</h1>
     <p class="hero-sub rv rv-d2">We build <b>custom AI tools and automation</b> for small and mid-size businesses — AI assistants, data analysis, and workflow automation that run on your own data and save you time and money.</p>
     <div class="hero-btns rv rv-d3">
-      <a class="btn btn-a" href="#contact">Book a Free Consultation</a>
+      <a class="btn btn-a" href="https://store101-start.vercel.app/" target="_blank" rel="noopener">Find your AI tool →</a>
       <a class="btn btn-b" href="#products">See Our Work</a>
     </div>
     <div class="scroll-hint rv rv-d3"><span class="ln"></span> Scroll</div>
@@ -295,7 +295,7 @@
 <section id="contact">
   <div class="wrap">
     <p class="sec-eyebrow rv">Contact</p>
-    <h2 class="sec-title rv rv-d1">Book a free consultation.</h2>
+    <h2 class="sec-title rv rv-d1">Get in touch.</h2>
     <p class="sec-lede rv rv-d1">Tell us about your business and what you'd like to improve. We'll tell you whether AI can help, what it would do, and what it would cost — no obligation.</p>
 
     <div class="contact-in">
@@ -311,7 +311,7 @@
           <div class="frow"><label for="c-biz">Business</label><input id="c-biz" name="business" type="text" placeholder="Jane's Hardware"></div>
           <div class="frow"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required placeholder="jane@business.com"></div>
           <div class="frow"><label for="c-msg">What would you like to improve?</label><textarea id="c-msg" name="message" required placeholder="e.g. We spend hours every week on manual reports…"></textarea></div>
-          <button class="submit" type="submit">Book a Free Consultation</button>
+          <button class="submit" type="submit">Send message</button>
           <div class="fnote">We usually reply within one business day.</div>
         </form>
         <div class="panel form-ok" id="formOk" style="padding:26px"><h3>Request received ✓</h3><p>Thanks — we'll reply within one business day.</p></div>
@@ -530,8 +530,8 @@
       }
       var btn = form.querySelector('.submit'); btn.textContent='Sending…'; btn.disabled=true;
       fetch(action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
-        .then(function(r){ if(r.ok){ form.style.display='none'; document.getElementById('formOk').style.display='block'; } else { btn.textContent='Book a Free Consultation'; btn.disabled=false; alert('Something went wrong — please email akshayk.inbox@gmail.com directly.'); } })
-        .catch(function(){ btn.textContent='Book a Free Consultation'; btn.disabled=false; alert('Something went wrong — please email akshayk.inbox@gmail.com directly.'); });
+        .then(function(r){ if(r.ok){ form.style.display='none'; document.getElementById('formOk').style.display='block'; } else { btn.textContent='Send message'; btn.disabled=false; alert('Something went wrong — please email akshayk.inbox@gmail.com directly.'); } })
+        .catch(function(){ btn.textContent='Send message'; btn.disabled=false; alert('Something went wrong — please email akshayk.inbox@gmail.com directly.'); });
     });
   }
 })();
